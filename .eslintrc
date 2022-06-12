@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "quotes": ["warn", "double"],
+    "semi": ["warn", "always"]
+//    "no-trailing-spaces": "off",
+//    "no-multiple-empty-lines": "warn",
+//    "unicorn/numeric-separators-style": "off",
+//    "@typescript-eslint/no-unused-vars": "off"
+  },
+  "extends": [
+//    "oclif",
+//    "oclif-typescript"
+  ]
+}
