@@ -5,7 +5,7 @@ export interface Container {
   ImageID: string;
   Command: string;
   Created: number;
-  Port: Port[];
+  Ports: Port[];
   SizeRw: number;
   SizeRootFs: number;
   Labels: any[];

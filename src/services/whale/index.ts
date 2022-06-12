@@ -14,10 +14,12 @@ export class WhaleServce extends HTTPService {
   // };
   // private _jwt?: string;
   config: Conf<Record<string, string>>;
+  cache: Conf<Record<number, Container>>;
 
   constructor() {
     super("https://whale.sparcs.org/api");
     this.config = new Conf<Record<string, string>>();
+    this.cache = new Conf<Record<number, Container>>();
 
     this.instance.interceptors.request.use(config => {
       if (this._jwt) {
@@ -82,7 +84,11 @@ export class WhaleServce extends HTTPService {
     //   status: container.Status,
     //
     // }));
-    return data;
+
+    return data.map((container, index) => {
+      this.cache.set(index.toString(), container);
+      return {index, ...container};
+    });
   }
 
 }
