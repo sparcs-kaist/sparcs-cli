@@ -4,7 +4,7 @@ import {Container} from "../../services/whale/types";
 import chalk, {Chalk} from "chalk";
 
 export default class Ls extends Command {
-  static description = "Ls all containers in whale";
+  static description = "List all containers in whale";
 
   async run() {
     const data = await services.whale.getContainers();
